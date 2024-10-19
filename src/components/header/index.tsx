@@ -1,14 +1,51 @@
-import React from "react";
-import styled from "styled-components";
 import Model from "../../assets/img/model_01.png";
 import TitleHeader from "../../assets/icon/Title_header.svg";
-
+import {
+  ViewContainer,
+  HeaderContainer,
+  Left,
+  Right,
+  Image,
+  Title_Header_Icon,
+  Shop_Button,
+  Subtitle,
+  MainText,
+  SelesContainer,
+  SalesData,
+  ParagraphData,
+  ParagraphNum,
+} from "./style.js";
 const Header = () => {
   return (
     <ViewContainer>
       <HeaderContainer>
         <Left>
-          <Title_Header_Icon src={TitleHeader} />
+          <MainText>
+            <Title_Header_Icon src={TitleHeader} />
+            <Subtitle>
+              Browse through our diverse range of meticulously crafted garments,
+              designed to bring out your individuality and cater to your sense
+              of style.
+            </Subtitle>
+            <Shop_Button>Shop Now</Shop_Button>
+          </MainText>
+
+          <SelesContainer>
+            <SalesData>
+              <ParagraphData>200+</ParagraphData>
+              <ParagraphNum>International Brands</ParagraphNum>
+            </SalesData>
+
+            <SalesData>
+              <ParagraphData>2,000+</ParagraphData>
+              <ParagraphNum>High-Quality Products </ParagraphNum>
+            </SalesData>
+
+            <SalesData>
+              <ParagraphData>30,000+</ParagraphData>
+              <ParagraphNum>Happy Customers </ParagraphNum>
+            </SalesData>
+          </SelesContainer>
         </Left>
         <Right>
           <Image src={Model} />
@@ -19,36 +56,3 @@ const Header = () => {
 };
 
 export default Header;
-
-const ViewContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f2f0f1;
-`;
-
-const HeaderContainer = styled.div`
-  width: 1550px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-const Left = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const Right = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const Image = styled.img`
-  width: 1000px;
-`;
-
-
-const Title_Header_Icon = styled.img`
-  width: 700px;
-`;

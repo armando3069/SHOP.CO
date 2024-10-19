@@ -29,8 +29,8 @@ const Navbar: FC = () => {
             <Icon src={Search} alt="" />
             <Input type="text" placeholder="Search for products..." />
           </Find>
-          <Icon src={Shop} alt="" />
-          <Icon src={Account} alt="" />
+          <Icon2 src={Shop} alt="" />
+          <Icon2 src={Account} alt="" />
         </Right>
       </NavContainer>
     </ViewContainer>
@@ -77,6 +77,8 @@ const Middle = styled.div`
   align-items: center;
   flex-direction: row;
   gap: 30px;
+  width: 100%;
+
 `;
 
 const Paragraf = styled.div`
@@ -90,22 +92,45 @@ const Right = styled.div`
   justify-content: flex;
   align-items: center;
   gap: 18px;
+  width: 100%;
 `;
-
 const Find = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 700px; /* Lățimea maximă inițială */
 `;
 
 const Input = styled.input`
-  min-width: 700px;
-  height:60px;
-  border:none;
-  border-radius:67px;
+  width: 100%; /* Umple întregul spațiu al containerului */
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  padding-left: 50px;
   background-color: #f0f0f0;
-  font-size:1.2rem;
+  font-size: 1.2rem;
+  color: #666;
+
+  /* Adaugă media queries pentru a controla micșorarea */
+  @media (max-width: 800px) {
+    max-width: 600px; /* Se micșorează la 600px la ecrane mai mici */
+  }
+
+  @media (max-width: 600px) {
+    max-width: 100%; /* Ocupă întreaga lățime a containerului */
+    min-width: 300px; /* Asigură o dimensiune minimă la ecrane foarte mici */
+  }
 `;
 
 const Icon = styled.img`
-width: 30px;
+  position: absolute;
+  left: 15px;
+  width: 40px;
+  height: 24px;
+  opacity: 0.5;
 `;
 
+const Icon2 = styled.img`
+  width: 30px;
+`;
