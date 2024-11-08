@@ -21,7 +21,7 @@ const Discount = () => {
     <Main_Container>
       <Container>
         <Link href="#">
-          Sign Up and get 20% off to your first order. <Span>Sign Up Now</Span>
+          Sign up and get 20% off to your first order. <Span>Sign Up Now</Span>
         </Link>
       </Container>
       <Button onClick={handleChange}>
@@ -37,8 +37,13 @@ const Link = styled.a`
   background-color: black;
   color: #ffff;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 0.875rem;
   text-decoration: none;
+
+  @media (max-width: 700px) {
+      font-size: 0.75rem;
+
+  }
 `;
 const Span = styled.span`
   text-decoration: underline;
@@ -48,14 +53,18 @@ const Button = styled.button`
   cursor: pointer;
   background-color: transparent;
   border: none;
+   @media (max-width: 700px) {
+      display:none;
+
+  }
 `;
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1440px;
-  height: 47px;
+  width: 1240px;
+  height: 38px;
   background-color: black;
-  padding: 0 50px;
+  padding: 0 40px;
 `;

@@ -1,12 +1,10 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { ViewContainer, CompanyContainer, Image } from "./style.ts";
 import Versace from "../../assets/icon/versace.svg";
 import Zara from "../../assets/icon/zara.svg";
 import Gucci from "../../assets/icon/gucii.svg";
 import Prada from "../../assets/icon/prada.svg";
 import Calvine from "../../assets/icon/calvine.svg";
-
-
 
 const Company: FC = () => {
   return (

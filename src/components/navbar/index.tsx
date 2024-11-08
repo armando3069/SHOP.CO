@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC,useState } from "react";
 import styled from "styled-components";
 import Hamburger from "../../assets/icon/hamburger.svg";
 import Account from "../../assets/icon/account.svg";
@@ -7,11 +7,33 @@ import Search from "../../assets/icon/search_black.svg";
 import LogoShop from "../../assets/icon/SHOP.CO.svg";
 
 const Navbar: FC = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+  const handleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+  const Middle = styled.div`
+    display: ${isOpen ? "none" : "flex"};
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 30px;
+
+  @media (max-width: 700px) {
+   //  display: none;
+     flex-direction: column;
+     margin-top: 300px;
+    
+
+  }
+
+`;
+
   return (
     <ViewContainer>
       <NavContainer>
         <Left>
-          <HideBlock>
+          <HideBlock onClick={handleOpen}>
             <img src={Hamburger} alt="" />
           </HideBlock>
           <Logo>
@@ -47,8 +69,8 @@ const ViewContainer = styled.div`
 `;
 
 const NavContainer = styled.div`
-  width: 1550px;
-  height: 120px;
+  width: 1240px;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,28 +80,24 @@ const Left = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: row;
-  gap: 100px;
+  gap: 10px;
 `;
 
 const HideBlock = styled.div`
   display: none;
+
+  @media (max-width: 700px) {
+   display: block;
+  }
 `;
 
 const Logo = styled.div``;
 
 const LogoImage = styled.img`
-  width: 200px;
+  width: 126px;
 `;
 
-const Middle = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 30px;
-  width: 100%;
 
-`;
 
 const Paragraf = styled.div`
   font-size: 1.2rem;
@@ -92,7 +110,6 @@ const Right = styled.div`
   justify-content: flex;
   align-items: center;
   gap: 18px;
-  width: 100%;
 `;
 const Find = styled.div`
   position: relative;
@@ -100,6 +117,12 @@ const Find = styled.div`
   align-items: center;
   width: 100%;
   max-width: 700px; /* Lățimea maximă inițială */
+
+  @media (max-width: 700px) {
+   margin:0;
+   padding:0;
+
+  }
 `;
 
 const Input = styled.input`
@@ -121,6 +144,13 @@ const Input = styled.input`
     max-width: 100%; /* Ocupă întreaga lățime a containerului */
     min-width: 300px; /* Asigură o dimensiune minimă la ecrane foarte mici */
   }
+
+    @media (max-width: 700px) {
+    display:none;
+
+  }
+
+
 `;
 
 const Icon = styled.img`
@@ -129,6 +159,12 @@ const Icon = styled.img`
   width: 40px;
   height: 24px;
   opacity: 0.5;
+
+  @media (max-width: 700px) {
+    position: relative;
+    left: 0;
+    opacity: 1;
+  }
 `;
 
 const Icon2 = styled.img`

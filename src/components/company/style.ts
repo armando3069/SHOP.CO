@@ -9,18 +9,26 @@ export const ViewContainer = styled.div`
 `;
 
 export const CompanyContainer = styled.div`
-  width: 1550px;
+  width: 1240px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   background-color: black;
   padding-top: 50px;
   padding-bottom: 50px;
+  gap: 20px;
 `;
 
 export const Image = styled.img`
-  width: 200px;
-  height: 50px;
+  width: 100px;
+  height: 25px;
   object-fit: contain;
+
+   @media (min-width: 700px) {
+       width: 200px;
+      height: 50px;
+
+  }
+
 `;
